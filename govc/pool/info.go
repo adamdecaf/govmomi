@@ -107,8 +107,8 @@ func (r *infoResult) Write(w io.Writer) error {
 	for _, pool := range r.ResourcePools {
 		fmt.Fprintf(tw, "Name:\t%s\n", pool.Name)
 
-		writeInfo(tw, "CPU", "MHz", &pool.Runtime.Cpu, &pool.Config.CpuAllocation)
-		writeInfo(tw, "Mem", "MB", &pool.Runtime.Memory, &pool.Config.MemoryAllocation)
+		writeInfo(tw, "CPU", " MHz", &pool.Runtime.Cpu, &pool.Config.CpuAllocation)
+		writeInfo(tw, "Mem", " bytes", &pool.Runtime.Memory, &pool.Config.MemoryAllocation)
 	}
 
 	return tw.Flush()
